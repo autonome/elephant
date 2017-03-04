@@ -52,7 +52,7 @@ const express = require("express");
 
   // Upon each new connection, broadcast data to all clients
   app.use(function(req, res, next) {
-    if (req.url == '/slides/viewer.html') {
+    if (req.url == '/viewer.html') {
       var ua = req.headers['user-agent'];
       if (stats.userAgents[ua]) {
         stats.userAgents[ua]++;

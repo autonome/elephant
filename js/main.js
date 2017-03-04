@@ -6,7 +6,7 @@ window.onload = function() {
 function onDCL() {
 
   // initialize websocket connection
-  var server = 'localhost', //window.location.hostname,
+  var server = window.location.hostname,
       port = 8009,
       socketURL = 'ws://' + server + ':' + port,
       socket = new WebSocket(socketURL);

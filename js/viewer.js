@@ -1,7 +1,7 @@
 (function() {
 
   var firstRun = !!localStorage.firstRun || true,
-      server = 'localhost', //window.location.hostname,
+      server = window.location.hostname,
       port = 8009,
       socketURL = 'ws://' + server + ':' + port,
       socket = null;
