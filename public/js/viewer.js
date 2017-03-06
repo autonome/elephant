@@ -1,13 +1,16 @@
 (function() {
 
-  var firstRun = !!localStorage.firstRun || true,
+  var firstRun = localStorage.userExists ? false : true,
       server = window.location.hostname,
-      port = 8009,
-      socketURL = 'ws://' + server + ':' + port,
+      socketURL = 'wss://' + server,
       socket = null;
 
   console.log('firstRun', firstRun);
-
+  
+  if (firstRun) {
+    localStorage.userExists = 1;
+  }
+  
   function onDCL() {
     // initialize websocket connection
     socket = new WebSocket(socketURL);
@@ -27,19 +30,39 @@
         console.log('ws message:', obj)
       };
     };
+    
+    //startCamera();
   }
   window.addEventListener('DOMContentLoaded', onDCL);
 
   function startCamera() {
-    // initialize camera source
-    var vid = document.querySelector('#vid');
-    cameraSource.start({
-      videoElement: vid,
-      callback: function() {
-        console.log('videoooo')
-      }
-    });
+    
+    navigator.mediaDevices.getUserMedia({
+			audio: true,
+			video: true
+		}).then(function (stream) {
+			var video = document.createElement('video');
+			video.src = URL.createObjectURL(stream);
+			document.body.appendChild(video);
+			video.play();
 
+			var recorder = new MediaRecorder(stream);
+			recorder.addEventListener('dataavailable', e => {
+				video.src = URL.createObjectURL(e.data);
+				video.play();
+				video.loop = true;
+			});
+			setTimeout(() => {
+				recorder.start();
+			}, 500);
+
+			setTimeout(() => {
+				recorder.stop();
+			}, 5000);
+
+		});
+
+    /*
     var button = document.createElement('button')
     button.innerText = 'take snapshot'
     button.addEventListener('click', function() {
@@ -63,5 +86,6 @@
       });
     });
     document.body.appendChild(button)
+    */
   }
 })();
