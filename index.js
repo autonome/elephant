@@ -3,9 +3,9 @@
 
 
 const http = require('http');
-const httpPort = 80;
+const httpPort = process.env.PORT || 8008;
 const ws = require("ws");
-const wsPort = 8080;
+const wsPort = 8009;
 const express = require("express");
 
 (() => {
@@ -22,7 +22,6 @@ const express = require("express");
   const server = http.createServer(app);
   
   // Web socket server
-  //var wss = new ws.Server({ port: wsPort, clientTracking: true });
   var wss = new ws.Server({server});
 
   function update() {
@@ -75,11 +74,11 @@ const express = require("express");
   // Register static dir
   app.use('/', express.static('public'));
 
-  app.listen(process.env.PORT, function() {
+  app.listen(httpPort, function() {
     console.log('Web server listening on port ' + httpPort);
   });
 
-  server.listen(8080, function listening() {
+  server.listen(wsPort, function listening() {
     console.log('Web socket server listening on port %d', server.address().port);
   });
   
