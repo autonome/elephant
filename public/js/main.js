@@ -27,7 +27,7 @@ function onDCL() {
   };
 
 }
-window.addEventListener('DOMContentLoaded', onDCL);
+//window.addEventListener('DOMContentLoaded', onDCL);
 
 function updateViewerData(data) {
   console.log('updating data');

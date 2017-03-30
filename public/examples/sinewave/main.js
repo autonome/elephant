@@ -23,7 +23,6 @@ navigator.getUserMedia = (navigator.msGetUserMedia ||
 // window. is needed otherwise Safari explodes
 var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 
-var voiceSelect = document.getElementById("voice");
 var source;
 var stream;
 
@@ -100,13 +99,13 @@ function visualize(visualSetting) {
 
       // Draw circle
       canvasCtx.beginPath();
-      canvasCtx.fillStyle = colors[0];
+      canvasCtx.fillStyle = 'rgb(255,0,128)'; //colors[0];
       canvasCtx.arc(w/2, h/2, w/2, 0, 2 * Math.PI, false);
       canvasCtx.fill();
 
       // Draw sine wave
       canvasCtx.lineWidth = 2;
-      canvasCtx.strokeStyle = colors[1];
+      canvasCtx.strokeStyle = 'rgb(255,255,255)'; //colors[1];
 
       canvasCtx.beginPath();
 
