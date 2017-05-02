@@ -7,8 +7,8 @@ function onDCL() {
 
   // initialize websocket connection
   var server = window.location.hostname,
-      port = 8080,
-      socketURL = 'wss://' + server , //+ ':' + port,
+      port = 8009,
+      socketURL = 'wss://' + server + ':' + port,
       socket = new WebSocket(socketURL);
 
   socket.onopen = function() {
@@ -27,7 +27,7 @@ function onDCL() {
   };
 
 }
-window.addEventListener('DOMContentLoaded', onDCL);
+//window.addEventListener('DOMContentLoaded', onDCL);
 
 function updateViewerData(data) {
   console.log('updating data');
@@ -76,7 +76,7 @@ function getUAStats(data) {
       stats.android += data[ua];
     }
     // iOS
-    else if (ua.indexOf('iPhone') != -1) {
+    else if (ua.indexOf('Mobile Safari') != -1) {
       stats.ios += data[ua];
     }
     // Other mobile
