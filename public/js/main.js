@@ -1,4 +1,37 @@
 window.onload = function() {
+  //
+  document.addEventListener("keydown", function(e) {
+    if (e.keyCode == 13) {
+      toggleFullScreen();
+    }
+  }, false);
+
+
+  // 💀💀💀💀💀💀💀💀
+  function toggleFullScreen() {
+    // Moz prefixed
+    if (document.documentElement.mozRequestFullScreen) {
+      if (!document.mozFullScreenElement) {
+        document.documentElement.mozRequestFullScreen();
+      }
+      else {
+        document.mozCancelFullScreen();
+      }
+    }
+
+    // Moz not prefixed
+    if (document.documentElement.requestFullscreen) {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      }
+      else {
+        document.exitFullscreen();
+      }
+    }
+  }
+  document.documentElement.ondblclick = toggleFullScreen;
+
+  // Initialize deck
   var sections = Array.from(document.querySelectorAll('section'));
   var deck = new MVSD(sections);
 };
