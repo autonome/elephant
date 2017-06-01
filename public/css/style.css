@@ -255,3 +255,36 @@ tt {
 .me {
   background-color: #00FFFF;
 }
+
+/*
+
+printing
+fix any absolute positioning?
+
+*/
+@media print {
+  @page {
+    size: landscape;
+  }
+  body {
+    height: auto;
+    width: auto;
+  }
+  section {
+    visibility: visible;
+    position: relative;
+    display: block;
+    break-before: always;
+    page-break-before: always;
+    page-break-inside: avoid;
+    height: 600px;
+    width: auto;
+  }
+  html, body, main, section, div {
+    float: none !important;
+    position: relative !important;
+    display: inline;
+    box-sizing: content-box !important;
+  }
+
+}
