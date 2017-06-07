@@ -2,8 +2,8 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Intelligence in Aggregate: Engaging Citizen Participation for Successful Smart Cities - Dietrich Ayala</title>
-  <meta name="description" content="Intelligence in Aggregate: Engaging Citizen Participation for Successful Smart Cities - Dietrich Ayala">
+  <title>Touching the Future: Designing Physical Experiences with the Web - Dietrich Ayala, Mozilla</title>
+  <meta name="description" content="Touching the Future: Designing Physical Experiences with the Web - Dietrich Ayala, Mozilla">
 
     <!-- for web -->
     <link rel="shortcut icon" href="https://secure.gravatar.com/avatar/16de8554bd4d2ec03c1c009935ea61c9?size=16" />
@@ -13,25 +13,25 @@
     <link rel="apple-touch-icon" href="https://secure.gravatar.com/avatar/16de8554bd4d2ec03c1c009935ea61c9" />
 
     <!-- Schema.org for Google -->
-    <meta itemprop="name" content="Intelligence in Aggregate: Engaging Citizen Participation for Successful Smart Cities - Dietrich Ayala">
-    <meta itemprop="description" content="Intelligence in Aggregate: Engaging Citizen Participation for Successful Smart Cities - Dietrich Ayala">
+    <meta itemprop="name" content="Touching the Future: Designing Physical Experiences with the Web - Dietrich Ayala, Mozilla">
+    <meta itemprop="description" content="Touching the Future: Designing Physical Experiences with the Web - Dietrich Ayala, Mozilla">
     <meta itemprop="image" content="https://secure.gravatar.com/avatar/16de8554bd4d2ec03c1c009935ea61c9">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@dietrich">
-    <meta name="twitter:title" content="Intelligence in Aggregate: Engaging Citizen Participation for Successful Smart Cities - Dietrich Ayala">
-    <meta name="twitter:description" content="Intelligence in Aggregate: Engaging Citizen Participation for Successful Smart Cities - Dietrich Ayala">
+    <meta name="twitter:title" content="Touching the Future: Designing Physical Experiences with the Web - Dietrich Ayala, Mozilla">
+    <meta name="twitter:description" content="Touching the Future: Designing Physical Experiences with the Web - Dietrich Ayala, Mozilla">
     <meta name="twitter:creator" content="@dietrich">
     <meta name="twitter:image" content="http://metafluff.com/octo.jpg">
-    <meta name="twitter:image:alt" content="Intelligence in Aggregate: Engaging Citizen Participation for Successful Smart Cities - Dietrich Ayala">
+    <meta name="twitter:image:alt" content="Touching the Future: Designing Physical Experiences with the Web - Dietrich Ayala, Mozilla">
 
     <!-- Open Graph for Facebook, Pinterest -->
-    <meta property="og:title" content="Intelligence in Aggregate: Engaging Citizen Participation for Successful Smart Cities - Dietrich Ayala" />
+    <meta property="og:title" content="Touching the Future: Designing Physical Experiences with the Web - Dietrich Ayala, Mozilla" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="http://metafluff.com" />
     <meta property="og:image" content="http://metafluff.com/octo.jpg" />
-    <meta property="og:description" content="Intelligence in Aggregate: Engaging Citizen Participation for Successful Smart Cities - Dietrich Ayala" />
+    <meta property="og:description" content="Touching the Future: Designing Physical Experiences with the Web - Dietrich Ayala, Mozilla" />
     <meta property="og:site_name" content="Dietrich Ayala" />
 
   <link rel="stylesheet" href="vendor/prism/prism.css">
@@ -39,13 +39,14 @@
 
   <link rel="stylesheet" href="vendor/mvsd/mvsd.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.3.0/paper.css">
 
   <script src="vendor/mvsd/mvsd.js" defer></script>
   <script src="js/main.js" defer></script>
 </head>
 <body>
 <main>
-  <!--
+<!--
   <nav>&amp;dietrich</nav>
 
   TL;DR:
@@ -122,6 +123,17 @@
     * geo AR
     * Add demo for pm2.5
 
+  NOTES - Webconf.asia
+    * set context: iot/ar/vr/wearables are changing the endgame
+      * and *specifically* from a design standpoint
+      * we can't just 2d this shit anymore
+      * we're currently in limbo - the building blocks are there but the hardware isn't ready yet.
+    * permissions are a challenge
+    * privacy is a challenge - what are the patterns for anonymous participation in physical spaces? (firefox focus - what if was a qr widget)
+    * Geolocation as trigger, as authentication
+    * bonus demo: add qr+ar marker for gum2gif, and import into AR scene
+    * responsive design for physical computing - walking into a room, leaving a room, nonscary ways of interfacing with humans. we design the robots (for now).
+    * flows for payment -> add cryowerx
 
   NOTES - DEMOS
     * screensharing from fx android back to slides for AR parts
@@ -178,17 +190,17 @@
     *
     * tl;dr: we can use the web now to build interesting things that prepare us for physical computing
 
-  -->
+-->
 
   <section class="intro">
-    <h1>Intelligence in Aggregate</h1>
-    <h2>Engaging Citizen Participation for Successful Smart Cities</h2>
-    <h3>CommunicAsia - Singapore, 2017</h3>
+    <h1>Touching the Future</h1>
+    <h2>Designing Physical Experiences with the Web</h1>
+    <h3>Webconf.asia - Hong Kong, 2017</h3>
     <h3>
-      <a href="https://mozilla.org">Mozilla.org</a> /
-      Dietrich Ayala / <a href="https://twitter.com/dietrich">@dietrich</a>
+      Dietrich Ayala
+      / <a href="https://twitter.com/dietrich">@dietrich</a>
+      / <a href="https://mozilla.org">Mozilla.org</a>
     </h3>
-    <!--<img src="imgs/mozbranding/moz-logo-neon-blue-rgb.png" style="width: 25rem; padding: 2rem;">-->
   </section>
 
   <section class="me splash background-image-contain" data-background="imgs/me-newlogo.png">
@@ -206,6 +218,7 @@
     </pre>
   </section>
 
+  <!--
   <section class="smartnation splash background-image" data-background="imgs/singapore-smartnation.png">
     <pre hidden>
       * example of advanced smart cities program in the world
@@ -220,7 +233,6 @@
     </center>
   </section>
 
-  <!--
   <section class="zero splash megabig">
     <center><h1>ZERO</h1></center>
     <pre hidden>
@@ -265,19 +277,28 @@
       How people engage with things will be diffeent.
     </pre>
   </section>
+  -->
 
   <section class="roomscale splash background-image" data-background="imgs/roomscale.png">
     <pre hidden>
       * the rooms are the computers
       * walk into a room and it can react
       * can say what's going on that day
-      * how to get users onboarded?
+      * right now the concept is owned by amazon alexa, google home, siri coming this fall
+      * but when you can build these with commodity hardware, the cheap ones aren't far off
+      * and why do they even have to be visible really, as long as there's feedback
+      * but anyways,
       * when every *thing* is a computer or a bot, we can't have apps for all the things 
       * the champions of iot and bots haven't solved this
       * we need new models of user engagement for physical technologies
     </pre>
   </section>
-  -->
+
+  <section class="lens splash background-image" data-background="imgs/lens.gif">
+    <pre hidden>
+      * is this the apps endgame?
+    </pre>
+  </section>
 
   <section class="nobody splash">
     <center>
@@ -294,6 +315,7 @@
     </center>
   </section>
 
+  <!--
   <section class="openvsinstall splash">
     <center>
     <h1>Open or Install</h1>
@@ -306,6 +328,7 @@
       - ux and ix make the difference in access to information and services
     </pre>
   </section>
+  -->
 
   <section class="timevsuniques">
     <center>
@@ -314,7 +337,7 @@
   </section>
 
   <section class="pwa splash megabig">
-    <center><h1>PROGRESSIVE<br>WEB APPS<br>(PWA)</h1></center>
+    <center><h1>PROGRESSIVE<br>WEB APPS<br>(AKA PWA)</h1></center>
     <pre hidden>
     </pre>
   </section>
@@ -335,6 +358,7 @@
     </center>
   </section>
 
+  <!--
   <section class="enabler splash">
     <center>
     <h1>The Web is a Smart Cities Enabler.</h1>
@@ -352,14 +376,33 @@
     <pre hidden>
     </pre>
   </section>
+  -->
 
-  <section class="onboarding splash megabig">
-    <center><h1>ONBOARDING</h1></center>
+  <section class="roomscale splash background-image" data-background="imgs/roomscale.png">
     <pre hidden>
+      * so, the rooms are the computers
+      * we've got some new tools
+      * how do we kick things off, bring people in
+      * how can we create bridges to digital experiences from physical interactions?
+      * how can we turn every room into a sarlacc pit for the internet?
+    </pre>
+  </section>
+
+  <section class="active-onboarding splash megabig">
+    <center><h1>ACTIVE<br>ONBOARDING</h1></center>
+    <pre hidden>
+      * onboarding sounds terrible, like the first day at a new job
+      * active onboarding methods require the user the initiate the digital experience
     </pre>
   </section>
 
   <section class="qr splash background-image-contain" data-background="imgs/mozilladotorg-qrcode.png">
+  </section>
+
+  <section class="qr-mashable splash">
+    <center>
+      <img src="imgs/qrcodes-mashable.png" style="margin-top: 150px;">
+    </center>
   </section>
 
   <!--
@@ -368,43 +411,81 @@
   -->
 
   <section class="qr-ifplus splash background-image-contain" data-background="imgs/ifplus.png">
-  </section>
-
-  <section class="nfc splash background-image" data-background="imgs/nfc.png">
-    <!--
-    <h1>NFC</h1>
-    -->
-  </section>
-
-  <!--
-  <section class="beacons splash background-image" data-background="imgs/beacons.png">
-    <h1>Beacons</h1>
     <pre hidden>
-      - bluetooth
-      - good for multi-floor spaces
-      - mozfest
-      - so far only works when you have a client
-      - you can be a beacon!
     </pre>
   </section>
-  -->
+
+  <section class="nfc-octopus splash background-image" data-background="imgs/hongkong-octopus-card.jpg">
+    <pre hidden>
+    </pre>
+  </section>
+
+  <section class="nfc-elevator splash background-image" data-background="imgs/hongkong-nfc-elevator.jpg">
+    <pre hidden>
+    </pre>
+  </section>
+
+  <section class="singapore-shake splash background-image" data-background="imgs/singapore-wechat-shake.jpg">
+    <pre hidden>
+    </pre>
+  </section>
+
+  <section class="hongkong-wonderwoman splash background-image" data-background="imgs/hongkong-wonderwoman.jpg">
+    <pre hidden>
+    </pre>
+  </section>
+
+  <section class="hongkong-mtr-fail splash background-image" data-background="imgs/hongkong-mtr-fail.jpg">
+    <pre hidden>
+    </pre>
+  </section>
+
+  <section class="hongkong-oldtown splash background-image" data-background="imgs/hongkong-oldtown-qrcode.jpg">
+    <pre hidden>
+    </pre>
+  </section>
+
+  <section class="active-onboarding splash megabig">
+    <center><h1>PASSIVE<br>ONBOARDING</h1></center>
+    <pre hidden>
+      * like not showing up for the first day on the job?!
+    </pre>
+  </section>
+
+  <section class="beacons splash background-image" data-background="imgs/beacons-pile.jpg">
+    <pre hidden>
+      * bluetooth
+      * good for multi-floor spaces
+      * configurable radio signal for distance
+      * google backported nearby to Android Kit Kat, 4.4
+    </pre>
+  </section>
 
   <section class="magnet splash background-image-contain" data-background="imgs/magnet.gif">
     <pre hidden>
-      - bluetooth
-      - good for multi-floor spaces
-      - mozfest
-      - so far only works when you have a client
-      - you can be a beacon!
+      * get notification as users experience a space
+      * potential for notification storm, abuse
+    </pre>
   </section>
 
   <section class="mozfestation background-image-contain" data-background="imgs/mozfestation.png">
+    <pre hidden>
+      * mozilla festival
+      * 9 floor art school in london
+      * users find out what's going on around them
+      * leave with a digital archive of what they experienced
+      * instead of emails to self and whatnot
+    </pre>
   </section>
 
   <section class="noise megabig">
     <center>
-    <h1><strike>SPEECH</strike> <br><br>NOISE!</h1>
+      <h1><strike>SPEECH</strike> <br><br>NOISE!</h1>
     </center>
+    <pre hidden>
+      * a lot of talk about speech recognition
+      * but differences in the ambient decibel level are a signal
+    </pre>
   </section>
 
   <section class="sinewave two-rows fullscreen-demo">
@@ -414,22 +495,41 @@
     <pre hidden>
       * you don't need fancy speech recognition to know if someone walked in the room
       * or if someone is asleep vs awake
-      * you can have a display turn on and show information when someone walks in
+      * but how do you know if there's a computer in the room?
+      * how do you know if something is listening?
+      * noise can be a signaller for presence/absence and whether to send notification, have the robot say "hi", etc
     </pre>
   </section>
 
-  <!--
+  <section class="trashbeauty splash background-image" data-background="imgs/trashbeauty.jpg">
+    <pre hidden>
+      * proximity
+      * also explored privacy concerns
+      * signaling in public spaces
+  </section>
+
   <section class="roomscale splash background-image" data-background="imgs/roomscale.png">
     <pre hidden>
       * but what to do once you've got people connected?
     </pre>
   </section>
-  -->
 
-  <section class="noise splash megabig">
+  <section class="patterns splash megabig">
     <center>
-    <h1>PATTERNS</h1>
+      <h1>PATTERNS<br>&amp; FLOW</h1>
     </center>
+    <pre hidden>
+      * onboarding technology has led to new software inputs
+      * and requires new patterns and task flows in our designs
+    </pre>
+  </section>
+
+  <section class="loop splash background-image-contain" data-background="imgs/physloop.gif">
+    <pre hidden>
+      * now we've got an interaction flow going
+      * and with PWA we have things like push notifications
+      * so we can re-engage during app switching or whatever as someone moves through a space
+    </pre>
   </section>
 
   <section class="flow-app megabig">
@@ -456,12 +556,39 @@
     </h1>
   </section>
 
-  <section class="flow-ar megabig">
+  <section class="loop2 background-image-contain" data-background="imgs/physloop-2.gif">
+    <pre hidden>
+      * complex topology in our interactions
+      * bluetooth mesh spec is coming soon
+    </pre>
+  </section>
+
+  <section class="flow-wtf megabig">
     <h1>
       ➡️ <img src="imgs/physical-icons.png"><br>
       &nbsp;&nbsp;➡️ URL<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;➡️ web app<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡️ AR
+      &nbsp;&nbsp;&nbsp;&nbsp;➡️ ...<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡️ ???
+    </h1>
+  </section>
+
+  <section class="buying-stuff megabig">
+    <center>
+      <h1>BUYING<br>STUFF</h1>
+    </center>
+  </section>
+
+  <section class="cryowerx background-image-contain" data-background="imgs/cryowerx.gif">
+    <pre hidden>
+    </pre>
+  </section>
+
+  <section class="flow-wtf megabig">
+    <h1>
+      ➡️ <img src="imgs/physical-icons.png"><br>
+      &nbsp;&nbsp;➡️ URL<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;➡️ <span style="font-size: 3rem;">Payment Request API</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡️ 💰💰💰
     </h1>
   </section>
 
@@ -513,17 +640,15 @@
     </div>
   </section>
 
-  <!--
   <section class="hehishim fullscreen-demo">
     <div>
       <iframe data-src="examples/hehishim"></iframe>
     </div>
   </section>
-  -->
 
   <section class="cam-3d-js-audio megabig">
     <center>
-    <h1>CAMERA +<br>JAVASCRIPT +<br>3D +<br>NOISE!</h1>
+    <h1>CAMERA +<br>JAVASCRIPT +<br>3D +<br>NOISE</h1>
     </center>
   </section>
 
@@ -537,6 +662,12 @@
     <center>
       <img src="imgs/arjs.png">
     </center>
+  </section>
+
+  <section class="arjs-multicard background-image-contain" data-background="imgs/arjs-multi.gif">
+    <pre hidden>
+      * conference badges
+    </pre>
   </section>
 
   <section>
@@ -616,7 +747,65 @@
   </section>
   -->
 
-  <section class="summary megabig">
+  <section class="hyper-reality background-image-contain" data-background="imgs/hyper-reality.gif">
+    <pre hidden>
+    * this is the new web
+    * integrated multisensory physical+digital experiences
+    * bridging platforms
+    * frictionless physical interaction flows
+    * ubiquitous physical computing
+    * mobile
+    *
+    * the hardware isn't here yet. but it's not far off.
+    * native and proprietary tech is here to stay in some form.
+    * the web is ready to glue these things together
+    * to make really interesting things
+    * and these are things you can do *now*
+    * 
+    * we need a responsive design for physical spaces
+    * we need a design language for physical interactions
+    * if we wait, amazon, google, apple will design this language for us
+    * using hardware to define the spaces we can design for
+    * but with the open web we have an opportunity now
+    * to get ready for these quickly coming technologies
+    * and fight the hegemony of the few big hardware providers
+    * and define the interactions we want to see.
+    </pre>
+  </section>
+
+  <!--
+  <section class="summary-webconfasia megabig">
+    <center>
+      <h1>Responsive<br>Design<br>For Spaces</h1>
+    <center>
+    <pre hidden>
+    * this is the new web
+    * integrated multisensory physical+digital experiences
+    * bridging platforms
+    * frictionless physical interaction flows
+    * ubiquitous physical computing
+    * mobile
+    *
+    * the hardware isn't here yet. but it's not far off.
+    * native and proprietary tech is here to stay in some form.
+    * the web is ready to glue these things together
+    * to make really interesting things
+    * and these are things you can do *now*
+    * 
+    * we need a responsive design for physical spaces
+    * we need a design language for physical interactions
+    * if we wait, amazon, google, apple will design this language for us
+    * using hardware to define the spaces we can design for
+    * but with the open web we have an opportunity now
+    * to get ready for these quickly coming technologies
+    * and fight the hegemony of the few big hardware providers
+    * and define the interactions we want to see.
+    </pre>
+  </section>
+  -->
+
+  <!--
+  <section class="summary-smartcities megabig">
     <center>
       <h1>SMART CITIES + WEB</h1>
     <center>
@@ -631,6 +820,7 @@
     * mobile
     </pre>
   </section>
+  -->
 
   <section class="fin splash">
     <center>
