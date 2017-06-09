@@ -69,6 +69,10 @@
     .talk-list li {
       font: italic 1em/1 Georgia;
     }
+    .talk {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
     .talk * {
       padding: 0.4em;
     }
@@ -85,6 +89,7 @@
       text-align: center;
     }
     .talk-link {
+      display: none;
     }
     .icons {
       text-align: center;
@@ -106,7 +111,6 @@
 		.footer {
       font: bold italic 1em/1 Georgia;
 			text-align: center;
-			position: fixed;
 			bottom: 0px;
 			width: 100%;
       margin: 1em;
@@ -139,18 +143,23 @@
 
     <div class="talks">
       <ul class="talk-list">
-        <li>
-          <div class="talk">
-            <div class="talk-title">App-ocalypse Now - The Future of User Onboarding in IoT</div>
-            <span class="talk-event">ThingsCon Shenzen</span> -
-            <span class="talk-location">Shenzen, China</span> -
-            <span class="talk-date">Thursday Apr 27, 2017</span>
-            <div class="talk-links">
-              <a class="talk-link" target="new" href="https://www.dropbox.com/s/n1nqk0efogxqpwl/ThingsCon-Shenzen-2017.pdf?dl=0">Slides (PDF)</a>
-              , <a class="talk-link" tartet="new" href="public/thingscon-shenzen.html">Slides (Web)</a>
+        <template id="template-talk">
+          <li>
+            <div class="talk">
+              <div class="talk-title"></div>
+              <div>
+              <span class="talk-event"></span> -
+              <span class="talk-location"></span> -
+              <span class="talk-date"></span>
+              </div>
+              <div class="talk-links">
+                <a class="talk-link talk-href_web" target="new" href="">Slides (Web)</a>
+                <a class="talk-link talk-href_pdf" target="new" href="">Slides (PDF)</a>
+                <a class="talk-link talk-href_vid" target="new" href="">Video</a>
+              </div>
             </div>
-          </div>
-        </li>
+          </li>
+        </template>
       </ul>
 
       <!--
@@ -190,18 +199,113 @@
 </div>
 
 <script>
-// fold into template tag
 var talks = [
+  { title: "Touching the Future: Designing Physical Experiences with the Web",
+    event: "Webconf.asia",
+    location: "Hong Kong",
+    date: "Saturday June 3, 2017",
+    href_web: "public/webconfasia.html"
+  },
+  { title: "Intelligence in Aggregate: Engaging Citizen Participation for Successful Smart Cities",
+    event: "CommunicAsia",
+    location: "Singapore",
+    date: "Thursday May 24, 2017",
+    href_web: "public/communicasia.html",
+  },
+  { title: "Preparing for the App-ocalypse: The Web in the Age of Physical Computing",
+    event: "Tech In Asia Singapore",
+    location: "Singapore",
+    date: "Wednesday May 17, 2017",
+    href_web: "public/tia-singapore.html"
+  },
   { title: "App-ocalypse Now - The Future of User Onboarding in IoT",
     event: "ThingsCon Shenzen",
     location: "Shenzen, China",
     date: "Thursday Apr 27, 2017",
-    links: [
-      { href: "https://www.dropbox.com/s/n1nqk0efogxqpwl/ThingsCon-Shenzen-2017.pdf?dl=0", title: "Slides (PDF)" },
-      { href: "public/thingscon-shenzen.html", title: "Slides (Web)" }
-    ]
+    href_web: "public/thingscon-shenzen.html",
+    href_pdf: "pdf/ThingsCon-Shenzen-2017.pdf"
+  },
+  { title: "Preparing for the App-ocalypse: The Web in the Age of Physical Computing",
+    event: "Dev Day Danang",
+    location: "Danang, Vietnam",
+    date: "Sunday, April 16, 2017",
+    href_web: "public/devday-danang.html",
+  },
+  { title: "Touching the Future: Merging the Physical and Digital for Creative Experiences on the Web",
+    event: "Thailand Startup Summit",
+    location: "Bangkok, Thailand",
+    date: "Friday, March 31, 2017",
+    href_web: "public/thailandstartupsummit.html",
+  },
+  { title: "Touching the Future: Creating Physical Experiences with the Web",
+    event: "FOSS Asia",
+    location: "Singapore",
+    date: "Sunday, March 19, 2017",
+    href_web: "public/fossasia2017.html",
+  },
+  { title: "Touching the Future: Creating Physical Experiences with the Web",
+    event: "Digital Nepal",
+    location: "Janakpur, Nepal",
+    date: "March 8, 2017",
+    href_web: "public/digital-nepal.html",
+  },
+  { title: "Preparing for the App-ocalypse",
+    event: "Code for Nepal",
+    location: "Kathmandu, Nepal",
+    date: "March 4, 2017",
+    href_web: "public/code-for-nepal.html"
+  },
+  { title: "Preparing for the App-ocalypse: The Web and the Age of Physical Computing",
+    event: "Phandeeyar Accelerator Meetup",
+    location: "Yangon, Myanmar",
+    date: "Feb 4, 2017",
+    href_web: "public/public/digital-nepal.html"
+  },
+  { title: "Virtual Reality on the Web with A-Frame",
+    event: "Barcamp Yangon",
+    location: "Yangon, Myanmar",
+    date: "Jan 28, 2017",
   }
+  /*
+  { title: "",
+    event: "",
+    location: "",
+    date: "",
+    href_web: "",
+    vidlink: "",
+    pdflink: ""
+  }
+  */
 ];
+
+function renderTemplate(container, content, data, classPrefix) {
+  var content = document.importNode(template.content, true).firstElementChild;
+
+  Object.keys(data).forEach(function(key) {
+    var qs = classPrefix ? '.' + classPrefix + key : key;
+    var fieldNode = content.querySelector(qs);
+    var fieldData = data[key];
+    var isAttr = key.indexOf('_') > 1;
+    if (isAttr) {
+      fieldNode.setAttribute('href', fieldData);
+      fieldNode.style.display = 'block';
+    }
+    else {
+      fieldNode.textContent = fieldData;
+    }
+  });
+
+  return container.appendChild(content);
+}
+
+var container = document.querySelector('.talk-list');
+var template = document.querySelector('#template-talk');
+var content = document.importNode(template.content, true).firstElementChild;
+
+talks.forEach(function(talk) {
+  renderTemplate(container, template, talk, 'talk-');
+});
+
 </script>
 
 </body>
