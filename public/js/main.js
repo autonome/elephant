@@ -34,10 +34,18 @@ window.onload = function() {
   // Initialize deck
   var sections = Array.from(document.querySelectorAll('section'));
   var deck = new MVSD(sections);
+
+  /*
+  var hammertime = new Hammer(document.documentElement);
+  hammertime.on('swipe', function(ev) {
+    console.log('swipe', ev);
+    var hash = parseInt(window.location.hash.substr(1), 10);
+    console.log('hash', hash)
+  });
+  */
 };
 
 function onDCL() {
-
   // initialize websocket connection
   var server = window.location.hostname,
       port = 8009,

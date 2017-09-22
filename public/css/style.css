@@ -232,11 +232,13 @@ ins {
 	text-decoration: none;
 }
 
+/*
 img {
 	max-width: 80%;
 	height: auto;
 	max-height: 70%;
 }
+*/
 
 tt {
 	font-weight: bold;

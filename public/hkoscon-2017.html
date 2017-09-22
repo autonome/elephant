@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Preparing for the App-ocalypse: The Web in the Age of Physical Computing - Dietrich Ayala, Mozilla</title>
   <meta name="description" content="Preparing for the App-ocalypse: The Web in the Age of Physical Computing - Dietrich Ayala, Mozilla">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
 
     <!-- for web -->
     <link rel="shortcut icon" href="https://secure.gravatar.com/avatar/16de8554bd4d2ec03c1c009935ea61c9?size=16" />
@@ -41,8 +42,6 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.3.0/paper.css">
 
-  <script src="vendor/mvsd/mvsd.js" defer></script>
-  <script src="js/main.js" defer></script>
 </head>
 <body>
 <main>
@@ -225,7 +224,7 @@
   <section class="mozilla splash background-image-contain" data-background="imgs/mozilla-org.png">
   </section>
 
-  <section class="innovation splash background-image" data-background="imgs/innovation.png">
+  <section class="innovation splash background-image-contain" data-background="imgs/innovation.png">
     <pre hidden>
       * why does mozilla want to talk about smart cities, at an event like this?
       * you're making decisions now about privacy, security and what technologies to use
@@ -432,7 +431,7 @@
   </section>
   -->
 
-  <section class="roomscale splash background-image" data-background="imgs/roomscale.png">
+  <section class="roomscale background-image" data-background="imgs/roomscale.png">
     <pre hidden>
       * so, the rooms are the computers
       * but not every room will have a single "controller"
@@ -441,10 +440,7 @@
     </pre>
   </section>
 
-  <section class="timevsuniques">
-    <center>
-      <img src="imgs/mobile-time-vs-uniques.png">
-    </center>
+  <section class="timevsuniques background-image-contain" data-background="imgs/mobile-time-vs-uniques.png">
   </section>
 
   <section class="active-onboarding splash megabig">
@@ -455,13 +451,10 @@
     </pre>
   </section>
 
-  <section class="qr splash background-image-contain" data-background="imgs/mozilladotorg-qrcode.png">
+  <section class="qr background-image-contain" data-background="imgs/mozilladotorg-qrcode.png">
   </section>
 
-  <section class="qr-mashable splash">
-    <center>
-      <img src="imgs/qrcodes-mashable.png" style="margin-top: 150px;">
-    </center>
+  <section class="qr-mashable background-image-contain" data-background="imgs/qrcodes-mashable.png">
   </section>
 
   <!--
@@ -479,7 +472,7 @@
     </pre>
   </section>
 
-  <section class="nfc-elevator splash background-image" data-background="imgs/hongkong-nfc-elevator.jpg">
+  <section class="nfc-elevator splash background-image-contain" data-background="imgs/hongkong-nfc-elevator.jpg">
     <pre hidden>
     </pre>
   </section>
@@ -593,7 +586,7 @@
 
   <section class="flow-app megabig">
     <h1>
-      ➡️ <img src="imgs/physical-icons.png"><br>
+      ➡️ <img src="imgs/physical-icons.png" style="height: 5rem;"><br>
       &nbsp;&nbsp;➡️ URL<br>
       &nbsp;&nbsp;&nbsp;&nbsp;➡️ app<br>
     </h1>
@@ -601,17 +594,17 @@
 
   <section class="flow-bot megabig">
     <h1>
-      ➡️ <img src="imgs/physical-icons.png"><br>
+      ➡️ <img src="imgs/physical-icons.png" style="height: 5rem;"><br>
       &nbsp;&nbsp;➡️ URL<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;➡️ <img src="imgs/messaging.png" style="width: 20rem;"><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;➡️ <img src="imgs/messaging.png" style="width: 15rem;"><br>
     </h1>
   </section>
 
   <section class="flow-web megabig">
     <h1>
-      ➡️ <img src="imgs/physical-icons.png"><br>
+      ➡️ <img src="imgs/physical-icons.png" style="height: 5rem;"><br>
       &nbsp;&nbsp;➡️ URL<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;➡️ <img src="imgs/browsers.png" style="width: 20rem;"><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;➡️ <img src="imgs/browsers.png" style="width: 15rem;"><br>
     </h1>
   </section>
 
@@ -624,7 +617,7 @@
 
   <section class="flow-wtf megabig">
     <h1>
-      ➡️ <img src="imgs/physical-icons.png"><br>
+      ➡️ <img src="imgs/physical-icons.png" style="height: 5rem;"><br>
       &nbsp;&nbsp;➡️ URL<br>
       &nbsp;&nbsp;&nbsp;&nbsp;➡️ ...<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡️ ???
@@ -642,9 +635,9 @@
     </pre>
   </section>
 
-  <section class="flow-shopping megabig">
+  <section class="flow-payments megabig">
     <h1>
-      ➡️ <img src="imgs/physical-icons.png"><br>
+      ➡️ <img src="imgs/physical-icons.png" style="height: 5rem;"><br>
       &nbsp;&nbsp;➡️ URL<br>
       &nbsp;&nbsp;&nbsp;&nbsp;➡️ <span style="font-size: 3rem;">Payment Request API</span><br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡️ 💰💰💰
@@ -1207,5 +1200,8 @@
 
   -->
 </main>
+  <script src="js/hammer-time.min.js"></script>
+  <script src="vendor/mvsd/mvsd.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

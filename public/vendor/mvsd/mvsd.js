@@ -3,7 +3,7 @@ function MVSD(slides) {
 	var currentIndex; // It's 1..indexed
 	var currentSlide;
 	
-	if(slides === undefined) {
+	if (slides === undefined) {
 		slides = Array.from(document.querySelectorAll('section'));
 	}
 
@@ -54,6 +54,9 @@ function MVSD(slides) {
 	function nextSlide() {
 		gotoSlide(currentIndex + 1);
 	}
+
+  this.prevSlide = prevSlide;
+  this.nextSlide = nextSlide;
 
 	function gotoSlide(n) {
 		// clamp value to slide range
@@ -190,5 +193,58 @@ function MVSD(slides) {
 			}
 		});
 	}
+
+  // Touch event handling
+  // TODO: keeps doing up/down swipes when really is just imprecise left/right swipes
+  document.addEventListener('touchstart', onTouchStart, false);
+  document.addEventListener('touchmove', onTouchMove, false);
+
+  var xDown = null,
+      yDown = null;
+
+  function onTouchStart(e) {
+    xDown = e.touches[0].clientX;
+    yDown = e.touches[0].clientY;
+  }
+
+  function onTouchMove(e) {
+    if (!xDown || !yDown) {
+      return;
+    }
+
+    var xUp = e.touches[0].clientX,
+        yUp = e.touches[0].clientY;
+        xDiff = xDown - xUp,
+        yDiff = yDown - yUp;
+
+    //console.log('xUp', xUp, 'yUp', yUp, 'xDown', xDown, 'yDown', yDown, 'xdiff', xDiff, 'yDiff', yDiff)
+
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {
+      if (xDiff > 0) {
+        // left swipe
+        //console.log('left swipe!');
+        nextSlide();
+      }
+      else {
+        // right swipe
+        //console.log('right swipe!');
+        prevSlide();
+      }
+    }
+    else {
+      if (yDiff > 0) {
+        // up swipe
+        //console.log('up swipe!');
+        prevSlide();
+      }
+      else {
+        // down swipe
+        //console.log('down swipe!');
+        nextSlide();
+      }
+    }
+    xDown = null;
+    yDown = null; 
+  }
 }
 
