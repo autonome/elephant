@@ -35,12 +35,15 @@
     <meta property="og:description" content="Designing for Physical Experiences: The Web in the Age of Room-Scale Computing - Dietrich Ayala, Mozilla" />
     <meta property="og:site_name" content="Dietrich Ayala" />
 
+  <!-- source code pretty -->
   <link rel="stylesheet" href="vendor/prism/prism.css">
   <script src="vendor/prism/prism.js" defer></script>
 
-  <link rel="stylesheet" href="vendor/mvsd/mvsd.css">
+  <!-- core styles -->
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.3.0/paper.css">
+
+  <!-- printing pretty -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.3.0/paper.css" media="only print">
 
 </head>
 <body>
@@ -209,7 +212,7 @@
 
   <section class="intro">
     <h1>Designing Physical Experiences</h1>
-    <h2 style="margin-bottom: 1em;">The Web in the Age of Room-Scale Computing</h2>
+    <h2>The Web in the Age of Room-Scale Computing</h2>
     <h3>MDN Roadshow - Penang, 2017</h3>
     <h3>
       Dietrich Ayala
@@ -491,7 +494,7 @@
     </pre>
   </section>
 
-  <section class="noise megabig">
+  <section class="noise megabig absolute-centered">
     <center>
       <h1><strike>SPEECH</strike> <br><br>NOISE!</h1>
     </center>
@@ -557,9 +560,9 @@
     </pre>
   </section>
 
-  <section class="flow-app megabig">
+  <section class="flow-app absolute-centered">
     <h1>
-      ➡️ <img src="imgs/physical-icons.png" style="height: 5rem;"><br>
+      ➡️ <img src="imgs/physical-icons.png" class="flow-physical-icons"><br>
       &nbsp;&nbsp;➡️ URL<br>
       &nbsp;&nbsp;&nbsp;&nbsp;➡️ app<br>
     </h1>
@@ -570,41 +573,37 @@
     </pre>
   </section>
 
-  <section class="flow-bot megabig">
+  <section class="flow-bot absolute-centered">
     <h1>
-      ➡️ <img src="imgs/physical-icons.png" style="height: 5rem;"><br>
+      ➡️ <img src="imgs/physical-icons.png" class="flow-physical-icons"><br>
       &nbsp;&nbsp;➡️ URL<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;➡️ <img src="imgs/messaging.png" style="width: 15rem;"><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;➡️ <img src="imgs/messaging.png" style="height: 4rem;"><br>
     </h1>
   </section>
 
-  <section class="web-msg">
-    <div style="height: 100%; display: flex; align-items: center; justify-content: center; -moz-box-pack: center;">
-      <img src="imgs/web-and-messaging.png">
-    </div>
+  <section class="web-msg absolute-centered">
+    <img src="imgs/web-and-messaging.png">
   </section>
 
-  <section class="flow-web megabig">
+  <section class="flow-web absolute-centered">
     <h1>
-      ➡️ <img src="imgs/physical-icons.png" style="height: 5rem;"><br>
+      ➡️ <img src="imgs/physical-icons.png" class="flow-physical-icons"><br>
       &nbsp;&nbsp;➡️ URL<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;➡️ <img src="imgs/browsers.png" style="width: 15rem;"><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;➡️ <img src="imgs/browsers.png" style="height: 4rem;"><br>
     </h1>
   </section>
 
-  <section class="flow-wtf megabig">
+  <section class="flow-wtf absolute-centered">
     <h1>
-      ➡️ <img src="imgs/physical-icons.png" style="height: 5rem;"><br>
+      ➡️ <img src="imgs/physical-icons.png" class="flow-physical-icons"><br>
       &nbsp;&nbsp;➡️ URL<br>
       &nbsp;&nbsp;&nbsp;&nbsp;➡️ ...<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡️ ???
     </h1>
   </section>
 
-  <section class="buying-things megabig">
-    <center>
-      <h1>BUYING<br>THINGS</h1>
-    </center>
+  <section class="buying-things megabig absolute-centered"">
+    <h1>BUYING<br>THINGS</h1>
   </section>
 
   <section class="touchpaymadness background-image-contain" data-background="imgs/multi-pay-qr-codes.jpg">
@@ -612,11 +611,11 @@
     </pre>
   </section>
 
-  <section class="flow-payments megabig">
+  <section class="flow-payments megabig absolute-centered">
     <h1>
-      ➡️ <img src="imgs/physical-icons.png" style="height: 5rem;"><br>
+      ➡️ <img src="imgs/physical-icons.png" class="flow-physical-icons"><br>
       &nbsp;&nbsp;➡️ URL<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;➡️ <span style="font-size: 3rem;">Payment Request API</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;➡️ Payment API<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡️ 💰💰💰
     </h1>
   </section>
@@ -646,9 +645,9 @@ request.show();
     </pre>
   </section>
 
-  <section class="flow-arvr megabig">
+  <section class="flow-arvr megabig absolute-centered">
     <h1>
-      ➡️ <img src="imgs/physical-icons.png" style="height: 5rem;"><br>
+      ➡️ <img src="imgs/physical-icons.png" class="flow-physical-icons"><br>
       &nbsp;&nbsp;➡️ URL<br>
       &nbsp;&nbsp;&nbsp;&nbsp;➡️  AR / VR
     </h1>
@@ -1337,7 +1336,6 @@ request.show();
 
   -->
 </main>
-  <script src="js/hammer-time.min.js"></script>
   <script src="vendor/mvsd/mvsd.js" defer></script>
   <script src="js/main.js" defer></script>
 </body>

@@ -1,5 +1,6 @@
 html {
 	box-sizing: border-box;
+  font-size: calc(112.5% + 0.5vw);
 }
 
 *, *:before, *:after {
@@ -14,15 +15,15 @@ html {
 body, html {
 	width: 100%;
 	height: 100%;
+  overflow: hidden;
 }
 
 body {
-	font-size: 3vh;
-	/*font-family: Monospace;*/
 	color: #000;
   background: #FCFBF0;
 	line-height: 1;
 }
+
 
 body {
   font-family: "Avenir", -apple-system, BlinkMacSystemFont, 
@@ -37,26 +38,28 @@ a {
 }
 
 h1 {
-	font-size: 3em;
-	margin: 0.25em 0;
+	font-size: 10vh; /*3em;*/
 }
 
 h2 {
-	font-size: 1.75em;
-	margin: 0.25em 0;
+	font-size: 7vh;/*1.75em;*/
+  margin-top: 2.1rem; /* 1.5 baselines */
+	/*margin: 0.25em 0;*/
 }
 
 h3 {
-	font-size: 1.25em;
-	margin: 0.25em 0;
+	font-size: 4vh; /*1.25em;*/
+  margin-top: 0.7rem; /* 0.5 baselines */
+	/*margin: 0.25em 0;*/
 }
 
-h1, h2, h2 {
+h1, h2, h3 {
 	font-weight: normal;
 }
 
 p {
 	font-size: 2em;
+  margin: 1.05rem; /* 0.75 baselines  */
 }
 
 ul {
@@ -119,7 +122,7 @@ section.warning {
 
 /* don't crop image to center - basically makes sure vertical fits */
 section.background-image-contain {
-  background-attachent: fixed;
+  background-attachment: fixed;
 	background-repeat: no-repeat;
   background-position: center center;
   -webkit-background-size: contain;
@@ -132,7 +135,7 @@ section.background-image-contain {
 section.background-image {
   /*background: url(images/bg.jpg) no-repeat center center fixed;*/
 	background-repeat: no-repeat;
-  /*background-position: 50% 50%;*/
+  background-position: 50% 50%;
   background-attachent: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -152,6 +155,14 @@ section.mozilla {
 	width: 100%;
 	height: auto;
 	max-height: 100%;
+}
+
+section.absolute-centered {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-box-pack: center;">
 }
 
 section.background-image > * {
@@ -266,6 +277,7 @@ fix any absolute positioning?
 */
 @media print {
   @page {
+    /* UNSUPPORTED https://developer.mozilla.org/en-US/docs/Web/CSS/@page/size */
     size: landscape;
   }
   body {
@@ -289,4 +301,24 @@ fix any absolute positioning?
     box-sizing: content-box !important;
   }
 
+}
+
+/*
+@media screen and (max-device-width: 480px) {
+  h1 {
+    font-size: 2em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  h3 {
+    font-size: 1.25em;
+  }
+}
+*/
+
+/* INDIVIDUAL SLIDES */
+
+.flow-physical-icons {
+  height: 7vh;
 }
