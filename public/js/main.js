@@ -32,8 +32,60 @@ window.onload = function() {
   document.documentElement.ondblclick = toggleFullScreen;
 
   // Initialize deck
-  var sections = Array.from(document.querySelectorAll('section'));
-  var deck = new MVSD(sections);
+  if (window.MVSD) {
+    var sections = Array.from(document.querySelectorAll('section'));
+    var deck = new MVSD(sections);
+  }
+
+  var states = {
+    previous: null,
+    current: null
+  };
+
+  function onVisibilityChange(e) {
+    if (e.visible == 1 && states.current != e.target) {
+      states.previous = states.current;
+      states.current = e.target;
+      if (states.previous) { // First load has no previous state
+        toggleIframe(states.previous, 0);
+      }
+      toggleIframe(states.current, 1);
+    }
+    // otherwise no change in fully visible card, so do nothing
+  }
+
+  function toggleIframe(el, visible) {
+    const iframe = el.querySelector('iframe');
+    if (!iframe) {
+      return;
+    }
+    // enable
+    if (visible == 1) {
+      var dataSrc = iframe.dataset.src;
+      if (dataSrc) {
+        iframe.src = dataSrc;
+      }
+    }
+    // disable
+    else {
+			iframe.src = '';
+    }
+  }
+
+  let iob = new IntersectionObserver(infos => {
+    infos
+      .filter(info => [0,1].includes(info.intersectionRatio))
+      .map(info => {
+        return {target: info.target, visible: info.intersectionRatio}
+      })
+      .forEach(onVisibilityChange);
+  }, { threshold: [0, 1] });
+
+  const qsa = 'section';
+  const els = document.querySelectorAll(qsa);
+  Array.prototype.slice.call(els).forEach(el => {
+    iob.observe(el);
+  });
 
   /*
   var hammertime = new Hammer(document.documentElement);

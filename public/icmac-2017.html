@@ -35,12 +35,19 @@
     <meta property="og:description" content="Designing for Physical Experiences: The Web in the Age of Room-Scale Computing - Dietrich Ayala, Mozilla" />
     <meta property="og:site_name" content="Dietrich Ayala" />
 
+  <!-- source code pretty -->
+  <!--
   <link rel="stylesheet" href="vendor/prism/prism.css">
   <script src="vendor/prism/prism.js" defer></script>
+  -->
 
-  <link rel="stylesheet" href="vendor/mvsd/mvsd.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.3.0/paper.css">
+  <!-- core styles -->
+  <link rel="stylesheet" href="css/style-scroller.css">
+
+  <!-- printing pretty -->
+  <!--
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.3.0/paper.css" media="only print">
+  -->
 
 </head>
 <body>
@@ -205,12 +212,79 @@
     *
     * tl;dr: we can use the web now to build interesting things that prepare us for physical computing
 
+  NOTES - ICMAC 2017
+    * switch font to lato
+    * innovation - care and feeding tech for healthy and successful innovation for people
+    * Mitchell quote on urban digitization
+      * reference Peter's report
+      * we're not ready for that
+      * people engaging in community through for-profit verticalized apps
+      * standards for privacy and security at substructure layer are not mature
+      * which means the market is flowing with technology and products untrusted by consumers
+      * additionally, the tech we're building now will be obsolete in a few years
+      * how to build for a moving target? huge investments into massive projects with predictable obsolescence
+    * additional challenges slide
+      * list quickly here
+      * the churn is crazy
+    * TJ, Communism, Buddhism have in common?
+    * leapfrogging
+      * designing for permanent state of leapfrogginess
+    * (SLIDE - big question) how to make smart cities that are trusted, relevant, and ready for the future - even the immediately-different future
+      * i'm going to talk about some patterns for designing technology that can do that
+    * TODO: get all the patterns and characteristics in here?
+    * (SLIDE) relevant, trusted and resilient - city in the background (nepal, hong kong, taipei?)
+      * (or: how to build timeless classics instead of putting time and money into unused and quickly obsolete projects)
+    * relevancy: apps vs web
+    * (SLIDE) show singapore apps
+    * (SLIDE) show more singapore apps
+      * these are almost uniformly transient tasks
+      * smart cities for users is not about immersion
+      * it's about transiency - quickly/efficiently
+      * the least amount of friction you can achieve will make engaging and effective solutions
+    * (SLIDE) 1000x more web than install quote
+      * 7 apps per day (CITATION NEEDED)
+      * what if you didn't need to be one of them?
+    * introduce the web 
+    * (SLIDE - techart) the web is perfect for not being one of them
+    * (SLIDE) flow: public space -> task -> open a web page
+    * (SLIDE) qr code - original physical technology - room scale!
+      * hk
+    * (SLIDE) nfc
+      * those are user-initiated
+      * broadcast scenarios
+    * (SLIDE) beacons
+      * broadcast
+    * (SLIDE) voice
+    * (SLIDE) noise
+    * now we've got people accessing services and getting critical information with low-cost existing room-scale tech and almost zero barrier to entry
+    * (SLIDE) PWA
+      * vertical p,w,a in bold
+      * animated desktop screen reducing to smartphone size
+      * the square of 4 technologies, each showing color coded levels of readiness, browser support, and future support
+      * google, apple, samsung, microsoft and mozilla all investing in giving the web superpowers
+    * (SLIDE) Payment request
+    * (SLIDE) bots flow
+    * gum
+    * hello my name is
+    * mr/ar/vr
+      * computer vision in the client
+    * (SLIDE) ai
+      * on web: at the edges, small, personalized, trustable
+      * deeplearning.js
+    * decentralization / p2p
+      * beaker, dat, ipfs, blockchain
+      * science data
+    * close
+      * resilient infrastructure in our technologies
+      * resilient to change
+      * so that we can quickly adapt to what an immediately-different future brings
+
 -->
 
-  <section class="intro">
-    <h1>Designing Physical Experiences</h1>
-    <h2 style="margin-bottom: 1em;">The Web in the Age of Room-Scale Computing</h2>
-    <h3>MDN Roadshow - Kuala Lumpur, 2017</h3>
+  <section id="title" class="intro">
+    <h1>(Em)Powering Smart Cities</h1>
+    <h2>Designing for Resiliency in the Leapfrog Age</h2>
+    <h3>ICMAC 2017, Denpasar, Bali</h3>
     <h3>
       Dietrich Ayala
       / <a href="https://twitter.com/dietrich">@dietrich</a>
@@ -218,39 +292,97 @@
     </h3>
   </section>
 
-  <section class="me splash background-image-contain" data-background="imgs/me-newlogo.png">
-  </section>
-
   <!--
-  <section class="mozilla splash background-image-contain" data-background="imgs/mozilla-org.png">
+  <section class="me background-image-contain" style="background-image: url(imgs/me-newlogo.png);">
+  -->
+  <section id="me" class="me background-image" style="background-image:url(imgs/me-newlogo.png);">
+    <pre hidden>
+    i'm dietrich ayala, and i work for the internet.
+    </pre>
   </section>
 
-  <section class="innovation splash background-image-contain" data-background="imgs/innovation.png">
+  <section class="mozilla splash background-image" style="background-image: url(imgs/mozilla-org.png);">
     <pre hidden>
-      * why does mozilla want to talk about smart cities, at an event like this?
+      * most know us by firefox
+      * but firefox is a tool we use to guide the direction of web tech
+    </pre>
+  </section>
+
+  <section class="innovation splash background-image" style="background-image: url(imgs/innovation.png);">
+    <pre hidden>
+      * why does mozilla want to talk about smart cities at an event like this?
+      * care and feeding tech for healthy and successful innovation for people
       * you're making decisions now about privacy, security and what technologies to use
       * and we want to see you succeed
       * we want to see your innovations work for *everyone*
     </pre>
   </section>
-  -->
 
-  <!--
-  <section class="smartnation splash background-image" data-background="imgs/singapore-smartnation.png">
+  <section class="mitchell splash">
+    <center>
+      <blockquote>
+        "Within bitsphere communities, there will be subnetworks at a smaller scale still – that of architecture. Increasingly, computers will meld seamlessly into the fabric of buildings and buildings themselves will become computers – the outcome of a long evolution."
+        <br>
+        <br>
+        <br>
+        <cite>
+          William J. Mitchell,
+          City of Bits (1995).
+        </cite>
+      </blockquote>
+    </center>
     <pre hidden>
-      * example of advanced smart cities program in the world
-      * whether you like it or not, agree or not, programs like these will be a model
+      * interestingly, the network turned out to be *people*
+      * buildings as computers is really only starting
+      * and i don't think we're ready yet
+      * people engaging in community through for-profit verticalized apps
+      * standards for privacy and security at substructure layer are not mature
+      * which means the market is flowing with technology and products untrusted by consumers
+      * additionally, the tech we're building now will be obsolete in a few years
+      * how to build for a moving target? huge investments into massive projects with predictable obsolescence
+    </pre>
+  </section>
+
+  <section class="loop-patterns background-image-contain" style="background-image: url(imgs/physloop-2.gif);">
+    <pre hidden>
+      * the stack today looks like this
+      * some of these are proprietary silos
+      * some are aging infrastructure
+      * some have no security or privacy standards
+      * hackers are using this one to run botnets
+    </pre>
+  </section>
+
+  <section class="tj-lt-b background-image-contain" style="background-image: url(imgs/tj-lt-b.png);">
+    <pre hidden>
+      * what do thomas jefferson, leon trotsky and buddha have in common?
+      * tj said each generation should have a revolution
+      * trotsky thought permanent revolution was key to true communism
+      * the buddha teaches us impermanency in every moment 
+      * they all designed for constant change
+    </pre>
+  </section>
+
+  <section class="leapfrogging background-image-contain" style="background-image: url(imgs/leapfrog.jpg);">
+    <pre hidden>
+      * designing for permanent state of leapfrogginess
+      * probably not possible, or even desirable
+      * but i'm going to talk about some patterns for designing technology that can do that
+      * specifically i'm going to talk about how to engage and empower users in relevant ways in public spaces
+    </pre>
+  </section>
+
+  <section class="smartnation splash background-image" style="background-image: url(imgs/singapore-smartnation.png);">
+    <pre hidden>
+      * example of advanced smart cities program
       * 
     </pre>
   </section>
 
-  <section class="singapore-apps">
-    <center>
-      <img src="imgs/singapore-apps.png">
-    </center>
+  <section class="sg-apps splash background-image" style="background-image: url(imgs/singapore-app-icons.png);">
   </section>
-  -->
 
+  <!--
   <section class="zero splash megabig">
     <center><h1>ZERO</h1></center>
     <pre hidden>
@@ -264,15 +396,23 @@
     </pre>
   </section>
 
-  <section class="zero-aug17 splash background-image-contain" data-background="imgs/zero-aug17.png">
+  <section class="zero-aug17 splash background-image-contain" style="background-image: url(imgs/zero-aug17.png);">
   </section>
+  -->
 
-  <section class="lens splash background-image" data-background="imgs/lens.gif">
+  <section class="lens splash background-image" style="background-image: url(imgs/lens.gif);">
     <pre hidden>
       * right now room scale computing looks like this
     </pre>
   </section>
 
+  <section class="transient splash megabig">
+    <center><h1>transient<br>computing</h1></center>
+    <pre hidden>
+    </pre>
+  </section>
+
+  <!--
   <section class="nobody splash">
     <center>
     <blockquote>
@@ -288,7 +428,6 @@
     </center>
   </section>
 
-  <!--
   <section>
     <h1>Coming <strike>soon</strike> now.</h1>
     <br>
@@ -306,7 +445,7 @@
     </pre>
   </section>
 
-  <section class="roomscale splash background-image" data-background="imgs/roomscale.png">
+  <section class="roomscale splash background-image" style="background-image: url(imgs/roomscale.png);">
     <pre hidden>
       * the rooms are the computers
       * walk into a room and it can react
@@ -328,24 +467,7 @@
   </section>
   -->
 
-  <!--
-  <section class="nobody splash">
-    <center>
-    <blockquote>
-      "One download for every one thousand web views."
-      <br>
-      <br>
-      <br>
-      <cite>
-        Ryan Sheffer,
-        Nobody Wants Your App.
-      </cite>
-    </blockquote>
-    </center>
-  </section>
-  -->
-
-  <section class="timevsuniques background-image-contain" data-background="imgs/mobile-time-vs-uniques.png">
+  <section class="timevsuniques background-image-contain" style="background-image: url(imgs/mobile-time-vs-uniques.png);">
   </section>
 
   <section class="openvsinstall splash">
@@ -361,24 +483,12 @@
   </section>
 
   <!--
-  <section class="roomscale background-image" data-background="imgs/roomscale.png">
-    <pre hidden>
-      * so, the rooms are the computers
-      * but not every room will have a single "controller"
-      * won't be configured with your account
-      * how can we create seamless bridges to digital experiences from physical interactions?
-    </pre>
+  <section class="eot background-image-contain" style="background-image: url(imgs/end-of-typing.png);">
+  </section>
+
+  <section class="roomscale splash background-image" style="background-image: url(imgs/roomscale.png);">
   </section>
   -->
-
-  <section class="transient splash megabig">
-    <center><h1>transient<br>computing</h1></center>
-    <pre hidden>
-    </pre>
-  </section>
-
-  <section class="roomscale splash background-image" data-background="imgs/roomscale.png">
-  </section>
 
   <!--
   <section class="active-onboarding splash megabig">
@@ -390,38 +500,41 @@
   </section>
   -->
 
-  <section class="qr background-image-contain" data-background="imgs/mozilladotorg-qrcode.png">
+  <section class="qr background-image-contain" style="background-image: url(imgs/mozilladotorg-qrcode.png);">
   </section>
 
-  <section class="qr-mashable background-image-contain" data-background="imgs/qrcodes-mashable.png">
+  <section class="qr-mashable background-image-contain" style="background-image: url(imgs/qrcodes-mashable.png);">
   </section>
 
-  <section class="qr-tsujiri background-image-contain" data-background="imgs/tsujiri-social-qr-codes.jpg">
+  <section class="qr-a16z background-image-contain" style="background-image: url(imgs/qr-a16z.png);">
   </section>
 
-  <!--
-  <section class="qr-cristina splash background-image-contain" data-background="imgs/christinaxu-qrcode.png">
-  </section>
-  -->
-
-  <section class="qr-ifplus splash background-image-contain" data-background="imgs/ifplus.png">
-    <pre hidden>
-    </pre>
-  </section>
-
-  <section class="nfc-easycard splash background-image" data-background="imgs/nfc-easycard.jpg">
-    <pre hidden>
-    </pre>
+  <section class="qr-tsujiri background-image-contain" style="background-image: url(imgs/tsujiri-social-qr-codes.jpg);">
   </section>
 
   <!--
-  <section class="nfc-octopus splash background-image" data-background="imgs/hongkong-octopus-card.jpg">
+  <section class="qr-cristina splash background-image-contain" style="background-image: url(imgs/christinaxu-qrcode.png);">
+  </section>
+  -->
+
+  <section class="qr-ifplus splash background-image-contain" style="background-image: url(imgs/ifplus.png);">
+    <pre hidden>
+    </pre>
+  </section>
+
+  <section class="nfc-easycard splash background-image" style="background-image: url(imgs/nfc-easycard.jpg);">
+    <pre hidden>
+    </pre>
+  </section>
+
+  <!--
+  <section class="nfc-octopus splash background-image" style="background-image: url(imgs/hongkong-octopus-card.jpg);">
     <pre hidden>
     </pre>
   </section>
   -->
 
-  <section class="nfc-elevator splash background-image-contain" data-background="imgs/hongkong-nfc-elevator.jpg">
+  <section class="nfc-elevator splash background-image-contain" style="background-image: url(imgs/hongkong-nfc-elevator.jpg);">
     <pre hidden>
     </pre>
   </section>
@@ -435,7 +548,7 @@
   </section>
   -->
 
-  <section class="beacons splash background-image" data-background="imgs/beacons-pile.jpg">
+  <section class="beacons splash background-image" style="background-image: url(imgs/beacons-pile.jpg);">
     <pre hidden>
       * bluetooth
       * good for multi-floor spaces
@@ -444,14 +557,14 @@
     </pre>
   </section>
 
-  <section class="magnet splash background-image-contain" data-background="imgs/magnet.gif">
+  <section class="magnet splash background-image-contain" style="background-image: url(imgs/magnet.gif);">
     <pre hidden>
       * get notification as users experience a space
       * potential for notification storm, abuse
     </pre>
   </section>
 
-  <section class="mozfestation background-image-contain" data-background="imgs/mozfestation.png">
+  <section class="mozfestation background-image-contain" style="background-image: url(imgs/mozfestation.png);">
     <pre hidden>
       * mozilla festival
       * 9 floor art school in london
@@ -461,29 +574,34 @@
     </pre>
   </section>
 
-  <section class="singapore-shake splash background-image" data-background="imgs/singapore-wechat-shake.jpg">
+  <section class="singapore-shake splash background-image" style="background-image: url(imgs/singapore-wechat-shake.jpg);">
     <pre hidden>
     </pre>
   </section>
 
-  <section class="hongkong-wonderwoman splash background-image" data-background="imgs/hongkong-wonderwoman.jpg">
+  <section class="hongkong-wonderwoman splash background-image" style="background-image: url(imgs/hongkong-wonderwoman.jpg);">
     <pre hidden>
     </pre>
   </section>
 
   <!--
-  <section class="hongkong-mtr-fail splash background-image" data-background="imgs/hongkong-mtr-fail.jpg">
+  <section class="hongkong-mtr-fail splash background-image" style="background-image: url(imgs/hongkong-mtr-fail.jpg);">
     <pre hidden>
     </pre>
   </section>
   -->
 
-  <section class="hongkong-oldtown splash background-image" data-background="imgs/hongkong-oldtown-qrcode.jpg">
+  <section class="hongkong-oldtown splash background-image" style="background-image: url(imgs/hongkong-oldtown-qrcode.jpg);">
     <pre hidden>
     </pre>
   </section>
 
-  <section class="noise megabig">
+  <section class="commonvoice background-image" style="background-image: url(imgs/commonvoice.png);">
+    <pre hidden>
+    </pre>
+  </section>
+
+  <section class="noise megabig absolute-centered">
     <center>
       <h1><strike>SPEECH</strike> <br><br>NOISE!</h1>
     </center>
@@ -506,14 +624,15 @@
     </pre>
   </section>
 
-  <section class="trashbeauty splash background-image" data-background="imgs/trashbeauty.jpg">
+  <section class="trashbeauty splash background-image" style="background-image: url(imgs/trashbeauty.jpg);">
     <pre hidden>
       * proximity
       * also explored privacy concerns
       * signaling in public spaces
+    </pre>
   </section>
 
-  <section class="roomscale splash background-image" data-background="imgs/roomscale.png">
+  <section class="roomscale splash background-image" style="background-image: url(imgs/roomscale.png);">
     <pre hidden>
       * but what to do once you've got people connected?
     </pre>
@@ -529,12 +648,25 @@
     </pre>
   </section>
 
-  <section class="oldloop splash background-image-contain" data-background="imgs/flow-finger-screen.gif">
+  <section class="oldloop splash background-image-contain" style="background-image: url(imgs/flow-finger-screen.gif);">
     <pre hidden>
     </pre>
   </section>
 
-  <section class="loop splash background-image-contain" data-background="imgs/physloop.gif">
+  <section class="flow-app absolute-centered">
+    <h1>
+      ➡️ <img src="imgs/physical-icons.png" class="flow-physical-icons"><br><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;➡️ URL<br><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡️ app<br>
+    </h1>
+  </section>
+
+  <section class="lens splash background-image" style="background-image: url(imgs/lens.gif);">
+    <pre hidden>
+    </pre>
+  </section>
+
+  <section class="loop splash background-image-contain" style="background-image: url(imgs/physloop.gif);">
     <pre hidden>
       * now we've got an interaction flow going
       * and with PWA we have things like push notifications
@@ -542,83 +674,63 @@
     </pre>
   </section>
 
-  <section class="flow-app megabig">
-    <h1>
-      ➡️ <img src="imgs/physical-icons.png" style="height: 5rem;"><br>
-      &nbsp;&nbsp;➡️ URL<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;➡️ app<br>
-    </h1>
-  </section>
-
-  <section class="lens splash background-image" data-background="imgs/lens.gif">
-    <pre hidden>
-    </pre>
-  </section>
-
-  <section class="flow-bot megabig">
-    <h1>
-      ➡️ <img src="imgs/physical-icons.png" style="height: 5rem;"><br>
-      &nbsp;&nbsp;➡️ URL<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;➡️ <img src="imgs/messaging.png" style="width: 15rem;"><br>
-    </h1>
-  </section>
-
-  <section class="web-msg">
-    <div style="height: 100%; display: flex; align-items: center; justify-content: center; -moz-box-pack: center;">
-      <img src="imgs/web-and-messaging.png">
-    </div>
-  </section>
-
-  <section class="flow-web megabig">
-    <h1>
-      ➡️ <img src="imgs/physical-icons.png" style="height: 5rem;"><br>
-      &nbsp;&nbsp;➡️ URL<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;➡️ <img src="imgs/browsers.png" style="width: 15rem;"><br>
-    </h1>
-  </section>
-
-  <section class="loop2 background-image-contain" data-background="imgs/physloop-2.gif">
+  <section class="loop2 background-image-contain" style="background-image: url(imgs/physloop-2.gif);">
     <pre hidden>
       * complex topology in our interactions
       * bluetooth mesh spec is coming soon
     </pre>
   </section>
 
-  <section class="flow-wtf megabig">
+  <section class="flow-bot absolute-centered">
     <h1>
-      ➡️ <img src="imgs/physical-icons.png" style="height: 5rem;"><br>
+      ➡️ <img src="imgs/physical-icons.png" class="flow-physical-icons"><br>
+      &nbsp;&nbsp;➡️ URL<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;➡️ <img src="imgs/messaging.png" style="height: 4rem;"><br>
+    </h1>
+  </section>
+
+  <section class="web-msg absolute-centered">
+    <img src="imgs/web-and-messaging.png">
+  </section>
+
+  <section class="flow-web absolute-centered">
+    <h1>
+      ➡️ <img src="imgs/physical-icons.png" class="flow-physical-icons"><br>
+      &nbsp;&nbsp;➡️ URL<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;➡️ <img src="imgs/browsers.png" style="height: 4rem;"><br>
+    </h1>
+  </section>
+
+  <!--
+  <section class="flow-wtf absolute-centered">
+    <h1>
+      ➡️ <img src="imgs/physical-icons.png" class="flow-physical-icons"><br>
       &nbsp;&nbsp;➡️ URL<br>
       &nbsp;&nbsp;&nbsp;&nbsp;➡️ ...<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡️ ???
     </h1>
   </section>
 
-  <section class="buying-things megabig">
-    <center>
-      <h1>BUYING<br>THINGS</h1>
-    </center>
+  <section class="buying-things megabig absolute-centered"">
+    <h1>BUYING<br>THINGS</h1>
   </section>
+  -->
 
-  <section class="cryowerx background-image-contain" data-background="imgs/cryowerx.gif">
+  <section class="touchpaymadness background-image-contain" style="background-image: url(imgs/multi-pay-qr-codes.jpg);">
     <pre hidden>
     </pre>
   </section>
 
-  <section class="touchpaymadness background-image-contain" data-background="imgs/multi-pay-qr-codes.jpg">
-    <pre hidden>
-    </pre>
-  </section>
-
-  <section class="flow-payments megabig">
+  <section class="flow-payments megabig absolute-centered">
     <h1>
-      ➡️ <img src="imgs/physical-icons.png" style="height: 5rem;"><br>
+      ➡️ <img src="imgs/physical-icons.png" class="flow-physical-icons"><br>
       &nbsp;&nbsp;➡️ URL<br>
-      &nbsp;&nbsp;&nbsp;&nbsp;➡️ <span style="font-size: 3rem;">Payment Request API</span><br>
+      &nbsp;&nbsp;&nbsp;&nbsp;➡️ Payment API<br>
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;➡️ 💰💰💰
     </h1>
   </section>
 
-  <section class="paymentrequestdiagram background-image-contain" data-background="imgs/payment-request-diagram.png">
+  <section class="paymentrequestdiagram background-image-contain" style="background-image: url(imgs/payment-request-diagram.png);">
     <pre hidden>
     </pre>
   </section>
@@ -638,15 +750,20 @@ request.show();
     </pre>
   </section>
 
+  <section class="cryowerx background-image-contain" style="background-image: url(imgs/cryowerx.gif);">
+    <pre hidden>
+    </pre>
+  </section>
 
-  <section class="flow-arvr megabig">
+  <section class="flow-arvr megabig absolute-centered">
     <h1>
-      ➡️ <img src="imgs/physical-icons.png" style="height: 5rem;"><br>
+      ➡️ <img src="imgs/physical-icons.png" class="flow-physical-icons"><br>
       &nbsp;&nbsp;➡️ URL<br>
       &nbsp;&nbsp;&nbsp;&nbsp;➡️  AR / VR
     </h1>
   </section>
 
+  <!--
   <section class="frictionlessAR megabig">
     <center>
       <h1>CASUAL<br>AUGMENTED<br>REALITY</h1>
@@ -658,6 +775,7 @@ request.show();
       <iframe data-src="examples/display-webcam.html"></iframe>
     </div>
   </section>
+  -->
 
   <!--
   <section class="cam-3d megabig">
@@ -667,11 +785,13 @@ request.show();
   </section>
   -->
 
+  <!--
   <section class="aframe-ar fullscreen-demo">
     <div>
       <iframe data-src="examples/aframe-ar/"></iframe>
     </div>
   </section>
+  -->
 
 	<!--
   <section class="cam-controls megabig">
@@ -692,6 +812,18 @@ request.show();
     </center>
   </section>
 	-->
+
+  <section class="cam fullscreen-demo">
+    <div>
+      <iframe data-src="examples/display-webcam.html"></iframe>
+    </div>
+  </section>
+
+  <section class="aframe-ar fullscreen-demo">
+    <div>
+      <iframe data-src="examples/aframe-ar/"></iframe>
+    </div>
+  </section>
 
   <section class="hellomynameis fullscreen-demo">
     <div>
@@ -728,26 +860,18 @@ request.show();
     </center>
   </section>
 
-  <section class="arjs-multicard background-image-contain" data-background="imgs/arjs-multi.gif">
+  <section class="arjs-multicard background-image-contain" style="background-image: url(imgs/arjs-multi.gif);">
     <pre hidden>
       * conference badges
     </pre>
   </section>
   -->
 
-  <section class="arkit background-image" data-background="imgs/arkit.png">
+  <section class="ar-native background-image" style="background-image: url(imgs/ar-native.png);">
     <pre hidden>
     </pre>
   </section>
 
-  <section class="arcore background-image" data-background="imgs/arcore.png">
-    <pre hidden>
-    </pre>
-  </section>
-
-<!--
-  <section class="webxr background-image" data-background="imgs/webxr.png">
--->
   <section class="webxr">
 		<center>
     	<img src="imgs/webxr.png" style="max-width: 80%;">
@@ -756,17 +880,20 @@ request.show();
     </pre>
   </section>
 
+  <!--
   <section class="pwa splash megabig">
     <center><h1>PROGRESSIVE<br>WEB APPS<br>(AKA PWA)</h1></center>
     <pre hidden>
     </pre>
   </section>
+  -->
 
   <section class="pwa-features splash">
     <center>
-    <h1>Homescreen Native</h1>
-    <h1>Offline &amp; Sync</h1>
-    <h1>Push Notifications</h1>
+      <h1>PROGRESSIVE<br>WEB APPS<br>(PWA)</h1>
+    <h2>Web Manifest</h1>
+    <h2>ServiceWorkers</h1>
+    <h2>Push Notifications</h1>
     </center>
     <pre hidden>
     </pre>
@@ -800,8 +927,6 @@ request.show();
   </section>
   -->
 
-
-
   <section>
     <h2><tt>getUserMedia()</tt></h2>
     <pre>
@@ -816,7 +941,7 @@ request.show();
     </pre>
   </section>
 
-  <section class="aframe splash background-image-contain" data-background="imgs/aframe.png">
+  <section class="aframe splash background-image-contain" style="background-image: url(imgs/aframe.png);">
   </section>
 
   <section class="aframe-code">
@@ -835,7 +960,7 @@ request.show();
 
   <section class="aframe-example fullscreen-demo">
     <div>
-      <iframe data-src="examples/aframe-ar/example.html"></iframe>
+      <iframe allowfullscreen data-src="examples/aframe-ar/example.html"></iframe>
     </div>
   </section>
 
@@ -846,7 +971,7 @@ request.show();
   -->
 
   <!--
-  <section class="crowd splash background-image" data-background="imgs/crowd.jpg">
+  <section class="crowd splash background-image" style="background-image: url(imgs/crowd.jpg);">
     <center>
     <h1>Crowd Experiences...</h1>
     <ul style="list-style-type: none;">
@@ -887,41 +1012,44 @@ request.show();
     </pre>
   </section>
 
-  <section class="corphome splash background-image-contain" data-background="imgs/corp-home.png" style="background-color: #ffffff;">
+  <section class="corphome splash background-image-contain" style="background-image: url(imgs/corp-home.png);" style="background-color: #ffffff;);">
     <pre hidden>
       * is this the roomscale endgame?
       * it's not the future we want
     </pre>
   </section>
 
-  <section class="amazapps splash background-image-contain" data-background="imgs/amazon-echo-apps.jpg">
+  <!--
+  <section class="amazapps splash background-image-contain" style="background-image: url(imgs/amazon-echo-apps.jpg);">
     <pre hidden>
       * actually, that much choice would be great
       * more often it looks like this
     </pre>
   </section>
 
-  <!--
-  <section class="hackster-alexa splash background-image" data-background="imgs/hackster-alexa.png">
+  <section class="hackster-alexa splash background-image" style="background-image: url(imgs/hackster-alexa.png);">
     <pre hidden>
       * 
     </pre>
   </section>
 
-  <section class="jasper splash background-image" data-background="imgs/jasper-assistant.png">
+  <section class="jasper splash background-image" style="background-image: url(imgs/jasper-assistant.png);">
     <pre hidden>
       * 
     </pre>
   </section>
   -->
 
-  <section class="project-things splash background-image-contain" data-background="imgs/project-things.png">
+  <!--
+  <section class="project-things splash background-image-contain" style="background-image: url(imgs/project-things.png);">
   </section>
-  <section class="things-gateway splash background-image-contain" data-background="imgs/things-gateway.png">
+  <section class="things-gateway splash background-image-contain" style="background-image: url(imgs/things-gateway.png);">
   </section>
-  <section class="wot-api splash background-image-contain" data-background="imgs/wot-api.png">
+  <section class="wot-api splash background-image-contain" style="background-image: url(imgs/wot-api.png);">
   </section>
+  -->
 
+  <!--
   <section class="privsec megabig">
     <center>
       <h1>PRIVACY<br><br>SECURITY</h1>
@@ -930,8 +1058,10 @@ request.show();
       * what does privacy look like in multi-entity topologies
     </pre>
   </section>
+  -->
 
-  <section class="corphome splash background-image-contain" data-background="imgs/corp-home.png" style="background-color: #ffffff;">
+  <!--
+  <section class="corphome splash background-image-contain" style="background-image: url(imgs/corp-home.png);" style="background-color: #ffffff;);">
     <pre hidden>
     </pre>
   </section>
@@ -940,14 +1070,15 @@ request.show();
     <pre hidden>
     </pre>
   </section>
+  -->
 
-  <section class="loop2-2 background-image-contain" data-background="imgs/physloop-2.gif">
+  <section class="loop2-2 background-image-contain" style="background-image: url(imgs/physloop-2.gif);">
     <pre hidden>
       * but what's really going on is this.
     </pre>
   </section>
 
-  <section class="hyper-reality background-image-contain" data-background="imgs/hyper-reality.gif">
+  <section class="hyper-reality background-image-contain" style="background-image: url(imgs/hyper-reality.gif);">
     <pre hidden>
     * this is the new web
     * integrated multisensory physical+digital experiences
@@ -972,6 +1103,7 @@ request.show();
     * and define the interactions we want to see.
     </pre>
   </section>
+
 
   <!--
   <section class="summary-webconfasia megabig">
@@ -1022,9 +1154,17 @@ request.show();
   </section>
   -->
 
+  <section class="constant-change background-image-contain" style="background-image: url(imgs/tj-lt-b.png);">
+    <pre hidden>
+      * they all designed for constant change
+      * resilient infrastructure in our technologies
+      * resilient to change
+      * so that we can quickly adapt to what an immediately-different future brings
+    </pre>
+  </section>
+
   <section class="fin splash">
     <center>
-
     <img src="imgs/mozlogo.png">
     <br>
     <br>
@@ -1032,6 +1172,8 @@ request.show();
     <h2>Dietrich Ayala</h2>
     <h2>@dietrich</h2>
     </center>
+    <pre hidden>
+    </pre>
   </section>
 
   <!--
@@ -1046,7 +1188,7 @@ request.show();
       </div>
     </section>
 
-    <section class="corphome splash background-image" data-background="imgs/corphome.png">
+    <section class="corphome splash background-image" style="background-image: url(imgs/corphome.png);">
     </section>
 
     <section class="openurl">
@@ -1091,7 +1233,7 @@ request.show();
       </pre>
     </section>
 
-    <section class="qr-nfc splash background-image" data-background="imgs/qr-nfc.png">
+    <section class="qr-nfc splash background-image" style="background-image: url(imgs/qr-nfc.png);">
       <h1>QR <br> NFC</h1>
     </section>
 
@@ -1114,7 +1256,7 @@ request.show();
       </div>
     </section>
 
-    <section class="beacons splash background-image" data-background="imgs/beacons.png">
+    <section class="beacons splash background-image" style="background-image: url(imgs/beacons.png);">
       <h1>Beacons</h1>
       <pre hidden>
         - bluetooth
@@ -1140,7 +1282,7 @@ request.show();
       </pre>
     </section>
 
-    <section class="beacon-simulator splash background-image" data-background="imgs/beacon-simulator.png">
+    <section class="beacon-simulator splash background-image" style="background-image: url(imgs/beacon-simulator.png);">
       <pre hidden>
         - phone broadcasts
         - rooms listen
@@ -1157,7 +1299,7 @@ request.show();
       </pre>
     </section>
 
-    <section class="voice splash background-image" data-background="imgs/voice.png">
+    <section class="voice splash background-image" style="background-image: url(imgs/voice.png);">
       <h1>VOICE</h1>
       <pre hidden>
         - amazon echo, google home
@@ -1166,7 +1308,7 @@ request.show();
       </pre>
     </section>
 
-    <section class="vaani splash background-image" data-background="imgs/vaani.png">
+    <section class="vaani splash background-image" style="background-image: url(imgs/vaani.png);">
       <pre hidden>
         - offline
         - mobile
@@ -1275,7 +1417,7 @@ request.show();
       </ul>
     </section>
 
-    <section class="roomscale splash background-image" data-background="imgs/roomscale.png">
+    <section class="roomscale splash background-image" style="background-image: url(imgs/roomscale.png);">
       <h1>What if rooms</h1>
       <h1><em>are<em> the computers?</h1>
       <pre hidden>
@@ -1294,7 +1436,7 @@ request.show();
       </pre>
     </section>
 
-    <section class="futuristic splash background-image" data-background="imgs/futuristic.png">
+    <section class="futuristic splash background-image" style="background-image: url(imgs/futuristic.png);">
       <pre hidden>
         This might seem like the distant future.
         It's not. Commodification and miniaturization of continuously advancing technology
@@ -1320,8 +1462,9 @@ request.show();
 
   -->
 </main>
-  <script src="js/hammer-time.min.js"></script>
+  <!--
   <script src="vendor/mvsd/mvsd.js" defer></script>
+  -->
   <script src="js/main.js" defer></script>
 </body>
 </html>
