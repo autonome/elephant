@@ -49,6 +49,7 @@
 
   h1 {
     font-size: 10vh; /*3em;*/
+    padding-top, padding-bottom: 2rem;
   }
 
   h2 {
@@ -142,7 +143,6 @@
     background-repeat: no-repeat;
     background-position: center center;
     -webkit-background-size: contain;
-    -moz-background-size: contain;
     -o-background-size: contain;
     background-size: contain;
   }
